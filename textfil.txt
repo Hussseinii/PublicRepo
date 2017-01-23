@@ -1,1 +1,2 @@
-jeg driver å lære meg git for 
+jeg driver å lære meg git for å 
+kunne bruke det til vårt bachelor prosjekt

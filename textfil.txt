@@ -1,2 +1,4 @@
 jeg driver å lære meg git for å 
 kunne bruke det til vårt bachelor prosjekt
+
+dette blir bra

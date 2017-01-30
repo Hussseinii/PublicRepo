@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 jeg
 det går ikke har
 var er det der driver med:
+=======
+Det var en gang
+>>>>>>> 182d4369fef63b46c919ce694c1223d37dc11998

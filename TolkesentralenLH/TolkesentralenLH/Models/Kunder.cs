@@ -6,11 +6,11 @@ using TolkesentralenLH.Models;
 
 namespace TolkesentralenLH.Models
 {
-    public class Kunde :Person
+    public class Kunder :Person
     {
         public string kundeNr { get; set; }
 
-        public List <Oppdrag> oppdrag { get; set; }
+        public virtual List <Oppdrag> oppdrag { get; set; }
 
     }
 }

@@ -18,7 +18,7 @@ namespace TolkesentralenLH.Models
 
         public String språkTil { get; set; }
 
-        public virtual Kunde kunde { get; set; }
+        public virtual Kunder kunde { get; set; }
 
         public virtual Tolk Tolk { get; set; }
 

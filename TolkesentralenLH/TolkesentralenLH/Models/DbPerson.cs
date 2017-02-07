@@ -8,6 +8,16 @@ namespace TolkesentralenLH.Models
     public class DbPerson
     {
         DbNetcont db = new DbNetcont();
+
+
+        public List<Person> hentKunde()
+        {
+            var db = new DbNetcont();
+            List<Person> alleKunder = db.Personer.ToList();
+
+            return alleKunder;
+          
+        }
         /// <summary>
         /// SettInn en kunde
         /// </summary>
@@ -143,5 +153,34 @@ namespace TolkesentralenLH.Models
                 return false;
             }
         }
+
+      
+
+
+
+        //public bool endreKunde(int persId, Person innPerson)
+        //{
+        //    var db = new DbNetcont();
+
+        //    try
+        //    {
+        //        Person endreKunde = db.Personer.Find(persId);
+        //        endreKunde.fornavn = innPerson.fornavn;
+        //        endreKunde.etternavn = innPerson.etternavn;
+        //        endreKunde.email = innPerson.email;
+        //        endreKunde.adresse = innPerson.adresse;
+        //        endreKunde.regDato = innPerson.regDato;
+        //        endreKunde.password = innPerson.password;
+
+        //        Poststed eksisterendePostdted = db.Poststeder.Find(innPerson.poststed.postNr);
+        //        if(eksisterendePostdted == null)
+        //        {
+        //            var nyttPoststed = new Poststed()
+        //            {
+
+        //            };
+        //        }
+        //    }
+        //}
     }
 }

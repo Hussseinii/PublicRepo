@@ -149,6 +149,7 @@
     <Compile Include="Models\DbOppdrag.cs" />
     <Compile Include="Models\DbPerson.cs" />
     <Compile Include="Models\Fil.cs" />
+    <Compile Include="Models\FKunde.cs" />
     <Compile Include="Models\Fremmaate.cs" />
     <Compile Include="Models\Kunde.cs" />
     <Compile Include="Models\Oppdrag.cs" />
@@ -173,6 +174,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Registrer.cshtml" />
+    <Content Include="Views\Home\Liste.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

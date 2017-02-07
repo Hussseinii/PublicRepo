@@ -48,7 +48,7 @@ namespace TolkesentralenLH.Models
               
             };
             
-            var kunde = new Kunde
+            var kunde = new Kunder
             {
                 fornavn = "Hussen",
                 etternavn = "Ali",

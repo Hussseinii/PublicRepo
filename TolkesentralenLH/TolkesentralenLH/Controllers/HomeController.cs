@@ -9,13 +9,13 @@ namespace TolkesentralenLH.Controllers
 {
     public class HomeController : Controller
     {
-        private static DbNetcont db = new DbNetcont();
-        private DbOppdrag dbOppdrag = new DbOppdrag(db);
 
-        public ActionResult Liste()
+
+
+        public ActionResult ListeKunde()
         {
             var DbPerson = new DbPerson();
-            List<Person> allekunde = DbPerson.hentKunde();
+            List<Kunde> allekunde = DbPerson.ListeAlleKunder();
             return View(allekunde);
         }
 
@@ -24,13 +24,14 @@ namespace TolkesentralenLH.Controllers
             return View();
         }
 
-        [ValidateAntiForgeryToken]
+         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Registrer(Kunde innKunde)
+        public ActionResult Registrer(FKunde innKunde)
         {
-            if (ModelState.IsValid)
+            if (true)
             {
                 var DbPerson = new DbPerson();
+         
                 bool insertOK = DbPerson.settInnKunde(innKunde);
                 if (insertOK)
                 {
@@ -39,10 +40,41 @@ namespace TolkesentralenLH.Controllers
             }
             return View();
         }
+        /// <summary>
+        /// Lister alleTolk under
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ListeAlleTolk()
+        {
+            var Dbperson = new DbPerson();
+            List<Tolk> alleToker = Dbperson.ListeAlleTolk();
+            return View(alleToker);
+        }
+        public ActionResult RegistrerTolk()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult RegistrerTolk(FKunde inntolk)
+        {
+        
+            if (true)
+            {
+                var DbPerson = new DbPerson();
+        
+                bool insertOK = DbPerson.settinnTolk(inntolk);
+                if (insertOK)
+                {
+                    return RedirectToAction("Liste");
+                }
+            }
+            return View();
+        }
+    }
+}
 
-        // GET: Home
-        //public ActionResult Index()
-        //{
+       // public ActionResult Index()
+       // {
         //   var sp1 = new Spraak
         //    {
         //        spraak = "norsk",
@@ -134,7 +166,5 @@ namespace TolkesentralenLH.Controllers
 
 
 
-        //    return View(db.Personer.ToList());
+        //    return View();
         //}
-    }
-}

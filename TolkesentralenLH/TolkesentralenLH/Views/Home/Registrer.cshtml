@@ -1,4 +1,4 @@
-﻿@model TolkesentralenLH.Models.Kunde
+﻿@model TolkesentralenLH.Models.FKunde
 
 @{
     ViewBag.Title = "Registrer";
@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Kunde</h4>
+        <h4>FKunde</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -47,10 +47,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.regDato, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.postNr, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.regDato, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.regDato, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.postNr, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.postNr, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.postSted, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.postSted, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.postSted, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -63,21 +71,13 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.kundeNr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.kundeNr, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.kundeNr, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Registrer"   @Html.ActionLink("Back to List", "")  class="btn btn-default" />
+                <input type="submit" value="Registrer" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Liste")
+    @Html.ActionLink("Back to List", "ListeKunde")
 </div>

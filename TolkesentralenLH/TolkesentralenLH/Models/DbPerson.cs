@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -7,14 +8,13 @@ namespace TolkesentralenLH.Models
 {
     public class DbPerson
     {
-        DbNetcont db = new DbNetcont();
+       // DbNetcont db = new DbNetcont();
 
 
-        public List<Person> hentKunde()
+        public List<Kunde> ListeAlleKunder()
         {
             var db = new DbNetcont();
-            List<Person> alleKunder = db.Personer.ToList();
-
+            List<Kunde> alleKunder = db.Personer.OfType<Kunde>().ToList();
             return alleKunder;
           
         }
@@ -23,125 +23,93 @@ namespace TolkesentralenLH.Models
         /// </summary>
         /// <param name="innkunde"></param>
         /// <returns></returns>
-        public bool settInnKunde(Kunde innkunde)
+        public bool settInnKunde(FKunde innkunde)
         {
+            var db = new DbNetcont();
             var nykunde = new Kunde()
             {
-                persId = innkunde.persId,
+               
                 fornavn = innkunde.fornavn,
                 etternavn = innkunde.etternavn,
                 email = innkunde.email,
                 adresse = innkunde.adresse,
-                regDato = innkunde.regDato,
-                password = innkunde.password,
+                regDato = DateTime.Now,
+                kundeNr = "29292992",
+                password = innkunde.password
 
             };
-            var db = new DbNetcont();
-            try
-            {
-                var eksistererPostnr = db.Poststeder.Find(innkunde.poststed.postNr);
+         
+            Poststed eksistererPostnr = db.Poststeder.Find(innkunde.postNr);
 
-                if (eksistererPostnr == null)
+            if (eksistererPostnr == null)
+            {
+                var nyttpoststed = new Poststed()
                 {
-                    var nyttpoststed = new Poststed()
-                    {
-                        postNr = innkunde.poststed.postNr,
-                        postSted = innkunde.poststed.postSted
+                    postNr = innkunde.postNr,
+                    postSted = innkunde.postSted
 
-                    };
-                    nykunde.poststed = nyttpoststed;
-
-                }
-                db.Personer.Add(nykunde);
-                db.SaveChanges();
-
-                return true;
-            }
-            catch (Exception feil)
+                };
+               // db.Poststeder.Add(nyttpoststed);
+                nykunde.poststed = nyttpoststed;
+                   
+            }else
             {
-                return false;
+                nykunde.poststed = eksistererPostnr;
             }
+                
+
+            db.Personer.Add(nykunde);
+            db.SaveChanges();
+            return true;
+               
         }
+
+        public List<Tolk> ListeAlleTolk()
+        {
+            var db = new DbNetcont();
+            List<Tolk> alleTolker = db.Personer.OfType<Tolk>().ToList();
+            return alleTolker;
+
+        }
+
         /// <summary>
         /// SettInn en Tolk
         /// </summary>
         /// <param name="inntolk"></param>
         /// <returns></returns>
-        public bool settinnTolk(Tolk inntolk)
+        public bool settinnTolk(FKunde inntolk)
         {
 
             var nyTolk = new Tolk()
             {
-                persId = inntolk.persId,
                 fornavn = inntolk.fornavn,
                 etternavn = inntolk.etternavn,
                 email = inntolk.email,
                 adresse = inntolk.adresse,
-                regDato = inntolk.regDato,
-                password = inntolk.password,
+                regDato = DateTime.Now,
+                tolkNr = "29292992",
+                password = inntolk.password
 
             };
             var db = new DbNetcont();
             try
             {
-                var eksistererPostnr = db.Poststeder.Find(inntolk.poststed.postNr);
+                var eksistererPostnr = db.Poststeder.Find(inntolk.postNr);
 
                 if (eksistererPostnr == null)
                 {
                     var nyttpoststed = new Poststed()
                     {
-                        postNr = inntolk.poststed.postNr,
-                        postSted = inntolk.poststed.postSted
+                        postNr = inntolk.postNr,
+                        postSted = inntolk.postSted
 
                     };
                     nyTolk.poststed = nyttpoststed;
 
                 }
-                db.Personer.Add (nyTolk);
-                db.SaveChanges();
-
-                return true;
-            }
-            catch (Exception feil)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Setter inn en Amdministrator
-        /// </summary>
-        /// <param name="innAdmin"></param>
-        /// <returns></returns>
-        public bool settinnAdmin(Admin innAdmin)
-        {
-
-            var nyTolk = new Admin()
-            {
-                persId = innAdmin.persId,
-                fornavn = innAdmin.fornavn,
-                etternavn = innAdmin.etternavn,
-                email = innAdmin.email,
-                adresse = innAdmin.adresse,
-                regDato = innAdmin.regDato,
-                password = innAdmin.password,
-
-            };
-            var db = new DbNetcont();
-            try
-            {
-                var eksistererPostnr = db.Poststeder.Find(innAdmin.poststed.postNr);
-
-                if (eksistererPostnr == null)
+                else
                 {
-                    var nyttpoststed = new Poststed()
-                    {
-                        postNr = innAdmin.poststed.postNr,
-                        postSted = innAdmin.poststed.postSted
-
-                    };
-                    nyTolk.poststed = nyttpoststed;
-
+                    nyTolk.poststed = eksistererPostnr;
                 }
                 db.Personer.Add(nyTolk);
                 db.SaveChanges();
@@ -150,37 +118,92 @@ namespace TolkesentralenLH.Models
             }
             catch (Exception feil)
             {
+                Debug.WriteLine("Exception Message: " + feil.Message);
+                return false;
+            }
+
+        }
+
+        ///// <summary>
+        ///// Setter inn en Amdministrator
+        ///// </summary>
+        ///// <param name="innAdmin"></param>
+        ///// <returns></returns>
+        public bool settinnAdmin(FKunde innAdmin)
+        {
+
+            var nyAdmin = new Admin()
+            {
+
+                fornavn = innAdmin.fornavn,
+                etternavn = innAdmin.etternavn,
+                email = innAdmin.email,
+                adresse = innAdmin.adresse,
+                regDato = DateTime.Now,
+                adminNr = "019901999",
+                //postNr = innAdmin.postNr,
+                password = innAdmin.password,
+
+            };
+            var db = new DbNetcont();
+            try
+            {
+                var eksistererPostnr = db.Poststeder.Find(innAdmin.postNr);
+
+                if (eksistererPostnr == null)
+                {
+                    var nyttpoststed = new Poststed()
+                    {
+                        postNr = innAdmin.postNr,
+                        postSted = innAdmin.postSted
+
+                    };
+                    nyAdmin.poststed = nyttpoststed;
+
+                }
+                else
+                {
+                    nyAdmin.poststed = eksistererPostnr;
+                }
+                db.Personer.Add(nyAdmin);
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (Exception feil)
+            {
+                Debug.WriteLine("Exception Message: " + feil.Message);
                 return false;
             }
         }
 
-      
 
-
-
-        //public bool endreKunde(int persId, Person innPerson)
-        //{
-        //    var db = new DbNetcont();
-
-        //    try
-        //    {
-        //        Person endreKunde = db.Personer.Find(persId);
-        //        endreKunde.fornavn = innPerson.fornavn;
-        //        endreKunde.etternavn = innPerson.etternavn;
-        //        endreKunde.email = innPerson.email;
-        //        endreKunde.adresse = innPerson.adresse;
-        //        endreKunde.regDato = innPerson.regDato;
-        //        endreKunde.password = innPerson.password;
-
-        //        Poststed eksisterendePostdted = db.Poststeder.Find(innPerson.poststed.postNr);
-        //        if(eksisterendePostdted == null)
-        //        {
-        //            var nyttPoststed = new Poststed()
-        //            {
-
-        //            };
-        //        }
-        //    }
-        //}
     }
+
+
+    //public bool endreKunde(int persId, Person innPerson)
+    //{
+    //    var db = new DbNetcont();
+
+    //    try
+    //    {
+    //        Person endreKunde = db.Personer.Find(persId);
+    //        endreKunde.fornavn = innPerson.fornavn;
+    //        endreKunde.etternavn = innPerson.etternavn;
+    //        endreKunde.email = innPerson.email;
+    //        endreKunde.adresse = innPerson.adresse;
+    //        endreKunde.regDato = innPerson.regDato;
+    //        endreKunde.password = innPerson.password;
+
+    //        Poststed eksisterendePostdted = db.Poststeder.Find(innPerson.poststed.postNr);
+    //        if(eksisterendePostdted == null)
+    //        {
+    //            var nyttPoststed = new Poststed()
+    //            {
+
+    //            };
+    //        }
+    //    }
+    //}
+
 }

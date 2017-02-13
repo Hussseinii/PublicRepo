@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TolkesentralenLH.Models.Person>
+﻿@model IEnumerable<TolkesentralenLH.Models.Kunde>
 
 @{
     ViewBag.Title = "Liste";
@@ -7,7 +7,7 @@
 <h2>Liste</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Registrer")
 </p>
 <table class="table">
     <tr>
@@ -28,6 +28,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postSted)
         </th>
         <th></th>
     </tr>
@@ -51,6 +57,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postSted)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.persId }) |

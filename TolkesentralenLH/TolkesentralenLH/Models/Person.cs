@@ -17,7 +17,7 @@ namespace TolkesentralenLH.Models
         public string email { get; set; }
         public string adresse { get; set; }
 
-        public DateTime regDato { get; set; }
+        public  DateTime regDato { get; set; }
 
         public string password { get; set; }
 

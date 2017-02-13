@@ -48,6 +48,7 @@ C:\Users\husse_000\documents\visual studio 2015\Projects\TolkesentralenLH\Tolkes
 C:\Users\husse_000\documents\visual studio 2015\Projects\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\husse_000\documents\visual studio 2015\Projects\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
 C:\Users\husse_000\documents\visual studio 2015\Projects\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache
+C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\ApplicationInsights.config
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csc.exe
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -96,5 +97,4 @@ C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\Sy
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Helpers.xml
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Mvc.xml
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache
-C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb

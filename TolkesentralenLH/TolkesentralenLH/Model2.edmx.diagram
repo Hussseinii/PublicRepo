@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0272a962aa5644a0bdff2ed45cddec10" Name="Diagram1">
+        <EntityTypeShape EntityType="TolkesentralenDbModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TolkesentralenDbModel.Fil" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TolkesentralenDbModel.Oppdrag" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TolkesentralenDbModel.Person" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TolkesentralenDbModel.Poststed" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TolkesentralenDbModel.Spraak" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID" ManuallyRouted="false" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID" ManuallyRouted="false" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Oppdrag_dbo_Person_kunde_persId" ManuallyRouted="false" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Oppdrag_dbo_Person_Tolk_persId" ManuallyRouted="false" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Person_dbo_Poststed_poststed_postNr" ManuallyRouted="false" />
+        <AssociationConnector Association="TolkesentralenDbModel.FK_dbo_Spraak_dbo_Person_Tolk_persId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

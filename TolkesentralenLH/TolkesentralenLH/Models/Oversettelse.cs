@@ -11,8 +11,9 @@ namespace TolkesentralenLH.Models
        
         public String frist { get; set; }
         public List<Fil> fil{ get; set; }
+   
 
-    
+
 
     }
 }

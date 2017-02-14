@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TolkesentralenLH.Models.Admin>
+
+@{
+    ViewBag.Title = "ListeAlleAdmin";
+}
+
+<h2>ListeAlleAdmin</h2>
+
+<p>
+    @Html.ActionLink("RegAdmin", "RegistrerAdmin")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fornavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etternavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regDato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adminNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postSted)
+        </th>
+       
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fornavn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etternavn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regDato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adminNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postSted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.persId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.persId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.persId })
+        </td>
+    </tr>
+}
+
+</table>

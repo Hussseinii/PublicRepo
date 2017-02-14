@@ -65,7 +65,37 @@ namespace TolkesentralenLH.Controllers
                 bool insertOK = DbPerson.settinnTolk(inntolk);
                 if (insertOK)
                 {
-                    return RedirectToAction("Liste");
+                    return RedirectToAction("ListeAlleTolk");
+                }
+            }
+            return View();
+        }
+        /// <summary>
+        /// Adminstration register
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ListeAlleAdmin()
+        {
+            var Dbperson = new DbPerson();
+            List<Admin> alleAdmin = Dbperson.ListeAlleAdmin();
+            return View(alleAdmin);
+        }
+        public ActionResult RegistrerAdmin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult RegistrerAdmin(FKunde innAdmin)
+        {
+
+            if (true)
+            {
+                var DbPerson = new DbPerson();
+
+                bool insertOK = DbPerson.settinnAdmin(innAdmin);
+                if (insertOK)
+                {
+                    return RedirectToAction("ListeAlleAdmin");
                 }
             }
             return View();

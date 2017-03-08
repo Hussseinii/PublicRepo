@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+    <div class="container body-content">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a routerLink="/home" routerLinkActive="active" class="navbar-brand" href="/home">Tolkesentralen</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a routerLink="/not-found" routerLinkActive="active">Bestill Tolk</a></li>
+            <li><a routerLink="/not-found" routerLinkActive="active">Bestillinger</a></li>
+            <li><a routerLink="/not-found" routerLinkActive="active">Avbestillinger</a></li>
+            <li><a routerLink="/not-found" routerLinkActive="active">Oversettelser</a></li>
+            <li><a routerLink="/not-found" routerLinkActive="active">Oppdrag Historikk</a></li>
+        </ul>
+        <ul class="nav navbar-nav "></ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a routerLink="/not-found" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+            <li><a routerLink="/home" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Logg ut</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+<div class="container body-content">
+<router-outlet ></router-outlet>
+</div>

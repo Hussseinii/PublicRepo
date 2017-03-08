@@ -1,0 +1,39 @@
+<div class="login-panel container">
+			<div class="col-md-4 col-md-offset-4 panel panel-default">
+
+				<h1 align="center" class="gap margin-base-vertical">Login</h1>
+        <h4 align="center" class="ubuntu-text"><i>{{error}}</i></h4>
+
+				<form [formGroup]="skjema" class="gap margin-base-vertical">
+				<p class="input-group ">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						<input autofocus  type="email" required class="form-control input-lg"
+						       formControlName="brukernavn" placeholder="e-post adresse" />
+					</p>
+
+          <p class="input-group ">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+						<input  type="password" required class="form-control input-lg"
+						       formControlName="passord" placeholder="passord" />
+					</p>
+
+
+          <br/>
+
+					
+
+					<p class="text-center">
+						<button (click)="onLogin()" class="btn btn-success btn-lg">Get In</button>
+					</p>
+				</form>
+
+
+
+				<div class="gap margin-base-vertical">
+					<h5 align="center">Har du ikke konto? <a ui-sref="signup">Opprett én</a></h5>
+				</div>
+
+			 <br/>
+
+			</div>
+</div>

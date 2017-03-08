@@ -1,0 +1,48 @@
+
+
+<nav class="navbar navbar-default">
+
+    <div class="container body-content">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a routerLink="/home" routerLinkActive="active" class="navbar-brand" href="/home"><span class="glyphicon glyphicon-home"></span> Tolkesentralen</a>
+        </div>
+
+        <div >
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/bestill-tolk" routerLinkActive="active">Bestill Tolk</a></li>
+                <li><a routerLink="/bestill-oversettelse" routerLinkActive="active">Bestill Oversettelse</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Info
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/info-om-oss" routerLinkActive="active">Om oss</a></li>
+                        <li><a routerLink="/info-tolk" routerLinkActive="active">Tolk</a></li>
+                        <li><a routerLink="/info-oversettelse" routerLinkActive="active">Oversettelse</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav "></ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink="/not-found" routerLinkActive="active"><span class="glyphicon glyphicon-registration-mark"></span> Registrer Kunde</a></li>
+                <li><a routerLink="/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Logg inn</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    </div>
+</nav>
+
+<div class="col-md-offset-1">
+    <h1>Hjem!</h1>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+    <a routerLink="/tolk" routerLinkActive="active">Tolk</a>
+    <a routerLink="/kunde" routerLinkActive="active">Kunde</a>
+</div>
+
+<router-outlet class="container body-content"></router-outlet>

@@ -13,14 +13,12 @@ namespace TolkesentralenLH.Models
         public int persId { get; set; }
         public string fornavn { get; set; }
         public string etternavn { get; set; }
-
+        public int tlf { get; set; }
         public string email { get; set; }
         public string adresse { get; set; }
-
-        public  DateTime regDato { get; set; }
-
         public string password { get; set; }
 
+        public DateTime regDato { get; set; }
         public virtual Poststed poststed { get; set; }
     }
 }

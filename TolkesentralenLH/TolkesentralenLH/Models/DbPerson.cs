@@ -35,20 +35,26 @@ namespace TolkesentralenLH.Models
             var db = new DbNetcont();
             var nykunde = new Kunde()
             {
-               
+
                 fornavn = innkunde.fornavn,
                 etternavn = innkunde.etternavn,
+                tlf = innkunde.tlf,
                 email = innkunde.email,
                 adresse = innkunde.adresse,
                 regDato = DateTime.Now,
-                kundeNr = "29292992",
-                password = innkunde.password
+                password = innkunde.password,
+
+                firma = innkunde.firma,
+                kontaktperson = innkunde.kontaktperson,
+                telefax = innkunde.telefax,
+                fakturaAddress = innkunde.fakturaAddress
 
             };
-         
-            Poststed eksistererPostnr = db.Poststeder.Find(innkunde.postNr);
+        
+        //her finner vi et poststed ved hjelp av en postnr
+        Poststed eksistererPoststed = db.Poststeder.Find(innkunde.postNr);
 
-            if (eksistererPostnr == null)
+            if (eksistererPoststed == null)
             {
                 var nyttpoststed = new Poststed()
                 {
@@ -61,7 +67,7 @@ namespace TolkesentralenLH.Models
                    
             }else
             {
-                nykunde.poststed = eksistererPostnr;
+                nykunde.poststed = eksistererPoststed;
             }
                 
 
@@ -339,6 +345,7 @@ namespace TolkesentralenLH.Models
             }
             catch(Exception feil)
             {
+                Debug.WriteLine("Exception Message: " + feil.Message);
                 return false;
             }
             return true;

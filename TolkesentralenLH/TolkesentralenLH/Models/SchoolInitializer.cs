@@ -56,7 +56,7 @@ namespace TolkesentralenLH.Models
                 adresse = "stovner",
                 regDato = DateTime.Parse("2005-09-01"),
                 password = "1111",
-                kundeNr = "k1"
+                
             };
 
             db.Personer.Add(admin);

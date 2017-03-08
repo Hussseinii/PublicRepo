@@ -10,8 +10,6 @@ namespace TolkesentralenLH.Controllers
     public class HomeController : Controller
     {
 
-
-
         public ActionResult ListeKunde()
         {
             var DbPerson = new DbPerson();
@@ -35,7 +33,7 @@ namespace TolkesentralenLH.Controllers
                 bool insertOK = DbPerson.settInnKunde(innKunde);
                 if (insertOK)
                 {
-                    return RedirectToAction("Liste");
+                    return RedirectToAction("ListeKunde");
                 }
             }
             return View();

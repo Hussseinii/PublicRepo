@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Diagnostics;
+
 using System.Web;
 using TolkesentralenLH.Models;
 
@@ -75,6 +79,51 @@ namespace TolkesentralenLH.Models
             db.SaveChanges();
             return true;
                
+        }
+        /// <summary>
+        /// Larging av hashing password
+        /// </summary>
+        /// <param name="innStreng"></param>
+        /// <returns></returns>
+        public byte[] lagHash(string innStreng)
+        {
+            byte[] innData, utData;
+            //var algoritme = SHA256.Create();
+            //innData = Encoding.UTF8.GetBytes(innStreng);
+            //utData = algoritme.ComputeHash(innData);
+            var algoritme = SHA512.Create();
+            innData = Encoding.ASCII.GetBytes(innStreng);
+            utData = algoritme.ComputeHash(innData);
+            return utData;
+        }
+
+        public string lagSalt()
+        {
+            byte[] randomArray = new byte[10];
+            string randomString;
+
+            var strg = new RNGCryptoServiceProvider();
+            strg.GetBytes(randomArray);
+            randomString = Convert.ToBase64String(randomArray);
+            return randomString;
+        }
+
+        public bool reggisteret_i_db(dbBruker innBruker)
+        {
+            using(var db = new DbNetcont())
+            {
+                dbBruker exsistereBruker = db.Brukere.FirstOrDefault(b => b.Navn == innBruker.Navn);
+                if(exsistereBruker != null)
+                {
+                    byte[] passordForTest = lagHash(innBruker.Passord + exsistereBruker.Salt);
+                    bool riktigBruker = exsistereBruker.Passord.SequenceEqual(passordForTest);
+                    return riktigBruker;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
         /// <summary>
         /// this method lists all the tolks
@@ -228,6 +277,10 @@ namespace TolkesentralenLH.Models
                 endreKunde.etternavn = innkunde.etternavn;
                 endreKunde.email = innkunde.email;
                 endreKunde.adresse = innkunde.adresse;
+                endreKunde.poststed.postNr = innkunde.poststed.postNr;
+                endreKunde.poststed.postSted = innkunde.poststed.postSted;
+                endreKunde.tlf = innkunde.tlf;
+               
                 endreKunde.regDato = innkunde.regDato;
                 endreKunde.password = innkunde.password;
 

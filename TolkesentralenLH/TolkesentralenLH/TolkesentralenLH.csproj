@@ -320,6 +320,7 @@
       <DependentUpon>Model3.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\dbBruker.cs" />
     <Compile Include="Models\DbNetcont.cs" />
     <Compile Include="Models\DbOppdrag.cs" />
     <Compile Include="Models\DbPerson.cs" />

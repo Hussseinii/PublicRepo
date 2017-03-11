@@ -23,6 +23,7 @@ namespace TolkesentralenLH.Models
         public DbSet<Poststed> Poststeder { get; set; }
         public DbSet<Oppdrag> Oppdrag { get; set; }
         public DbSet<Fil> Filer { get; set; }
+        public DbSet<dbBruker> Brukere { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

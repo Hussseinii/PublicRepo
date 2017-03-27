@@ -16,9 +16,38 @@ namespace TolkesentralenLH.Models
         public int tlf { get; set; }
         public string email { get; set; }
         public string adresse { get; set; }
-        public string password { get; set; }
+        public byte[] password { get; set; }
 
         public DateTime regDato { get; set; }
+        public int godkjent { get; set; }
+        public string Salt { get; set; }
         public virtual Poststed poststed { get; set; }
     }
+
+    public class Admin : Person
+    {
+
+
+    }
+
+    public class Kunde : Person
+    {
+        public string firma { get; set; }
+        public string kontaktperson { get; set; }
+        public int telefax { get; set; }
+        public string fakturaAddress { get; set; }
+
+        public virtual List<Oppdrag> oppdrag { get; set; }
+    }
+
+    public class Tolk : Person
+    {
+
+        public List<Spraak> spraak { get; set; }
+
+        public List<Oppdrag> oppdrag { get; set; }
+
+
+    }
+
 }

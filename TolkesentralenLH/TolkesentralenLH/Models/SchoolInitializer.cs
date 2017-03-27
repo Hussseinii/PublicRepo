@@ -22,7 +22,7 @@ namespace TolkesentralenLH.Models
                 email = "h@hotmail.com",
                 adresse = "tøyen",
                 regDato = DateTime.Parse("2005-09-01"),
-                password = "1111",
+               // password = "1111",
                 adminNr ="a1"
 
             };
@@ -34,8 +34,8 @@ namespace TolkesentralenLH.Models
                 email = "h@hotmail.com",
                 adresse = "tøyen",
                 regDato = DateTime.Parse("2005-09-01"),
-                password = "1111",
-                tolkNr = "t1",
+               // password = "1111",
+                //tolkNr = "t1",
                 spraak = new List<Spraak>()
                 {
                     new Spraak()
@@ -55,7 +55,7 @@ namespace TolkesentralenLH.Models
                 email = "h@hotmail.com",
                 adresse = "stovner",
                 regDato = DateTime.Parse("2005-09-01"),
-                password = "1111",
+               // password = "1111",
                 
             };
 

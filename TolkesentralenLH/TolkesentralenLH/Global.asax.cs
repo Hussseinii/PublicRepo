@@ -13,7 +13,7 @@ namespace TolkesentralenLH
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new SchoolInitializer());
+          
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

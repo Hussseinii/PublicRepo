@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TolkesentralenDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fil">
+    <Key>
+      <PropertyRef Name="filID" />
+    </Key>
+    <Property Name="filID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="size" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="oppdrag_oppdragsID" Type="Int32" />
+    <Property Name="Oversettelse_oppdragsID" Type="Int32" />
+    <NavigationProperty Name="Oppdrag" Relationship="Self.FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID" FromRole="Fil" ToRole="Oppdrag" />
+    <NavigationProperty Name="Oppdrag1" Relationship="Self.FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID" FromRole="Fil" ToRole="Oppdrag" />
+  </EntityType>
+  <EntityType Name="Oppdrag">
+    <Key>
+      <PropertyRef Name="oppdragsID" />
+    </Key>
+    <Property Name="oppdragsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oppdragType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="oppdragsgiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="språkFra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="språkTil" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fremmaateNr" Type="Int32" />
+    <Property Name="oppdragsAddres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dato" Type="DateTime" Precision="3" />
+    <Property Name="tidFra" Type="DateTime" Precision="3" />
+    <Property Name="tidTil" Type="DateTime" Precision="3" />
+    <Property Name="frist" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kunde_persId" Type="Int32" />
+    <Property Name="Tolk_persId" Type="Int32" />
+    <NavigationProperty Name="Fils" Relationship="Self.FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID" FromRole="Oppdrag" ToRole="Fil" />
+    <NavigationProperty Name="Fils1" Relationship="Self.FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID" FromRole="Oppdrag" ToRole="Fil" />
+    <NavigationProperty Name="Person" Relationship="Self.FK_dbo_Oppdrag_dbo_Person_kunde_persId" FromRole="Oppdrag" ToRole="Person" />
+    <NavigationProperty Name="Person1" Relationship="Self.FK_dbo_Oppdrag_dbo_Person_Tolk_persId" FromRole="Oppdrag" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="persId" />
+    </Key>
+    <Property Name="persId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fornavn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="etternavn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="regDato" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="kundeNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adminNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tolkNr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="poststed_postNr" Type="Int32" />
+    <NavigationProperty Name="Oppdrags" Relationship="Self.FK_dbo_Oppdrag_dbo_Person_kunde_persId" FromRole="Person" ToRole="Oppdrag" />
+    <NavigationProperty Name="Oppdrags1" Relationship="Self.FK_dbo_Oppdrag_dbo_Person_Tolk_persId" FromRole="Person" ToRole="Oppdrag" />
+    <NavigationProperty Name="Poststed" Relationship="Self.FK_dbo_Person_dbo_Poststed_poststed_postNr" FromRole="Person" ToRole="Poststed" />
+    <NavigationProperty Name="Spraaks" Relationship="Self.FK_dbo_Spraak_dbo_Person_Tolk_persId" FromRole="Person" ToRole="Spraak" />
+  </EntityType>
+  <EntityType Name="Poststed">
+    <Key>
+      <PropertyRef Name="postNr" />
+    </Key>
+    <Property Name="postNr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="postSted1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="People" Relationship="Self.FK_dbo_Person_dbo_Poststed_poststed_postNr" FromRole="Poststed" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Spraak">
+    <Key>
+      <PropertyRef Name="spraakNr" />
+    </Key>
+    <Property Name="spraakNr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="spraak1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nivaa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tolk_persId" Type="Int32" />
+    <NavigationProperty Name="Person" Relationship="Self.FK_dbo_Spraak_dbo_Person_Tolk_persId" FromRole="Spraak" ToRole="Person" />
+  </EntityType>
+  <Association Name="FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID">
+    <End Role="Oppdrag" Type="Self.Oppdrag" Multiplicity="0..1" />
+    <End Role="Fil" Type="Self.Fil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oppdrag">
+        <PropertyRef Name="oppdragsID" />
+      </Principal>
+      <Dependent Role="Fil">
+        <PropertyRef Name="oppdrag_oppdragsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID">
+    <End Role="Oppdrag" Type="Self.Oppdrag" Multiplicity="0..1" />
+    <End Role="Fil" Type="Self.Fil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Oppdrag">
+        <PropertyRef Name="oppdragsID" />
+      </Principal>
+      <Dependent Role="Fil">
+        <PropertyRef Name="Oversettelse_oppdragsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Oppdrag_dbo_Person_kunde_persId">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Oppdrag" Type="Self.Oppdrag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="persId" />
+      </Principal>
+      <Dependent Role="Oppdrag">
+        <PropertyRef Name="kunde_persId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Oppdrag_dbo_Person_Tolk_persId">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Oppdrag" Type="Self.Oppdrag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="persId" />
+      </Principal>
+      <Dependent Role="Oppdrag">
+        <PropertyRef Name="Tolk_persId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Person_dbo_Poststed_poststed_postNr">
+    <End Role="Poststed" Type="Self.Poststed" Multiplicity="0..1" />
+    <End Role="Person" Type="Self.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Poststed">
+        <PropertyRef Name="postNr" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="poststed_postNr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Spraak_dbo_Person_Tolk_persId">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Spraak" Type="Self.Spraak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="persId" />
+      </Principal>
+      <Dependent Role="Spraak">
+        <PropertyRef Name="Tolk_persId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TolkesentralenDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="Fils" EntityType="Self.Fil" />
+    <EntitySet Name="Oppdrags" EntityType="Self.Oppdrag" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="Poststeds" EntityType="Self.Poststed" />
+    <EntitySet Name="Spraaks" EntityType="Self.Spraak" />
+    <AssociationSet Name="FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID" Association="Self.FK_dbo_Fil_dbo_Oppdrag_oppdrag_oppdragsID">
+      <End Role="Oppdrag" EntitySet="Oppdrags" />
+      <End Role="Fil" EntitySet="Fils" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID" Association="Self.FK_dbo_Fil_dbo_Oppdrag_Oversettelse_oppdragsID">
+      <End Role="Oppdrag" EntitySet="Oppdrags" />
+      <End Role="Fil" EntitySet="Fils" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Oppdrag_dbo_Person_kunde_persId" Association="Self.FK_dbo_Oppdrag_dbo_Person_kunde_persId">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Oppdrag" EntitySet="Oppdrags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Oppdrag_dbo_Person_Tolk_persId" Association="Self.FK_dbo_Oppdrag_dbo_Person_Tolk_persId">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Oppdrag" EntitySet="Oppdrags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Person_dbo_Poststed_poststed_postNr" Association="Self.FK_dbo_Person_dbo_Poststed_poststed_postNr">
+      <End Role="Poststed" EntitySet="Poststeds" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Spraak_dbo_Person_Tolk_persId" Association="Self.FK_dbo_Spraak_dbo_Person_Tolk_persId">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Spraak" EntitySet="Spraaks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -28,6 +28,7 @@ namespace TolkesentralenLH.Models
                     {
                         var kunde = new Kunde_VM()
                         {
+                            persId = row.persId,
                             firma = row.firma,
                             fornavn = row.fornavn,
                             etternavn = row.etternavn,

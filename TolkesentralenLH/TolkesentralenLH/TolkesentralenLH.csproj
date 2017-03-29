@@ -294,6 +294,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\KundesController.cs" />
     <Compile Include="Controllers\OppdragsController.cs" />
+    <Compile Include="Controllers\SpraakController.cs" />
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
@@ -338,7 +339,7 @@
     <Compile Include="Models\Oppdrag.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Poststed.cs" />
-    <Compile Include="Models\Spraak.cs" />
+    <Compile Include="Models\Spraaak.cs" />
     <Compile Include="Oppdrag.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
@@ -374,6 +375,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Kundes\Registrer.cshtml" />
     <Content Include="Views\Kundes\ListeKunde.cshtml" />
+    <Content Include="Views\Spraak\RegSpraak.cshtml" />
+    <Content Include="Views\Spraak\ListSpraak.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

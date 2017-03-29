@@ -43,7 +43,8 @@ namespace TolkesentralenLH.Models
     public class Tolk : Person
     {
 
-        public List<Spraak> spraak { get; set; }
+
+        public List<Spraaak> spraak { get; set; }
 
         public List<Oppdrag> oppdrag { get; set; }
 

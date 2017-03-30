@@ -1,0 +1,106 @@
+﻿@model IEnumerable<TolkesentralenLH.Models.Kunde>
+
+@{
+    ViewBag.Title = "ListeKunde";
+}
+
+<h2>ListeKunde</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fornavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etternavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tlf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postNr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.poststed.postSted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regDato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kontaktperson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fakturaAddress)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fornavn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etternavn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tlf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regDato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kontaktperson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fakturaAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postNr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.poststed.postSted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.persId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.persId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.persId })
+        </td>
+    </tr>
+}
+
+</table>

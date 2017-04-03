@@ -92,7 +92,7 @@ namespace TolkesentralenLH.Models
             var db = new DbNetcont();
            
             string salt = lagSalt();
-            var passordOgSalt = innkunde.passord + salt;
+            var passordOgSalt = innkunde.password+ salt;
             byte[] dbPassword = lagHash(passordOgSalt);
 
             var nykunde = new Kunde()
@@ -101,7 +101,7 @@ namespace TolkesentralenLH.Models
                 fornavn = innkunde.fornavn,
                 etternavn = innkunde.etternavn,
                 tlf = innkunde.tlf,
-                email = innkunde.epost,
+                email = innkunde.email,
                 adresse = innkunde.adresse,
                 regDato = DateTime.Now,
                 godkjent = 0,
@@ -200,70 +200,8 @@ namespace TolkesentralenLH.Models
         }
         */
 
-            
-        /// <summary>
-        /// this method lists all the tolks
-        /// </summary>
-        /// <returns>
-        /// and returns the list of all the tolkes
-        /// </returns>
-        public List<Tolk> ListeAlleTolk()
-        {
-            var db = new DbNetcont();
-            List<Tolk> alleTolker = db.Personer.OfType<Tolk>().ToList();
-            return alleTolker;
 
-        }
-
-        /// <summary>
-        /// SettInn en Tolk
-        /// </summary>
-        /// <param name="inntolk"></param>
-        /// <returns></returns>
-        //public bool settinnTolk(Kunde inntolk)
-        //{
-
-        //    var nyTolk = new Tolk()
-        //    {
-        //        fornavn = inntolk.fornavn,
-        //        etternavn = inntolk.etternavn,
-        //        email = inntolk.email,
-        //        adresse = inntolk.adresse,
-        //        regDato = DateTime.Now,
-        //       // tolkNr = "29292992",
-        //        password = lagHash(inntolk.password)
-
-        //    };
-        //    var db = new DbNetcont();
-        //    try
-        //    {
-        //        var eksistererPostnr = db.Poststeder.Find(inntolk.postNr);
-
-        //        if (eksistererPostnr == null)
-        //        {
-        //            var nyttpoststed = new Poststed()
-        //            {
-        //                postNr = inntolk.postNr,
-        //                postSted = inntolk.postSted
-
-        //            };
-        //            nyTolk.poststed = nyttpoststed;
-
-        //        }
-        //        else
-        //        {
-        //            nyTolk.poststed = eksistererPostnr;
-        //        }
-        //        db.Personer.Add(nyTolk);
-        //        db.SaveChanges();
-
-        //        return true;
-        //    }
-        //    catch (Exception feil)
-        //    {
-        //        Debug.WriteLine("Exception Message: " + feil.Message);
-        //        return false;
-        //    }
+      
 
         //}
         /// <summary>
@@ -280,60 +218,100 @@ namespace TolkesentralenLH.Models
 
         }
 
-        ///// <summary>
-        ///// Setter inn en Amdministrator
-        ///// </summary>
-        ///// <param name="innAdmin"></param>
-        ///// <returns></returns>
-        //public bool settinnAdmin(FKunde innAdmin)
-        //{
+        
+       /**********************************************************Tolk-start*************************/
+        public bool settinnTolk(Tolk_VM nyTolk)
+        {
+          
+            string salt = lagSalt();
+            var passordOgSalt = nyTolk.password + salt;
+            byte[] dbPassword = lagHash(passordOgSalt);
 
-        //    var nyAdmin = new Admin()
-        //    {
+            var dbTolk = new Tolk()
+            {
 
-        //        fornavn = innAdmin.fornavn,
-        //        etternavn = innAdmin.etternavn,
-        //        email = innAdmin.email,
-        //        adresse = innAdmin.adresse,
-        //        regDato = DateTime.Now,
-        //        adminNr = "019901999",
-        //        password = lagHash (innAdmin.password),
+                fornavn = nyTolk.fornavn,
+                etternavn = nyTolk.etternavn,
+                tlf = nyTolk.tlf,  
+                email = nyTolk.email,
+                adresse = nyTolk.adresse,
+                regDato = DateTime.Now,
+                password = dbPassword,
+                Salt= salt
 
-        //    };
-        //    var db = new DbNetcont();
-        //    try
-        //    {
-        //        var eksistererPostnr = db.Poststeder.Find(innAdmin.postNr);
+            };
+            var db = new DbNetcont();
+            try
+            {
+                var spraakFunnet = db.Poststeder.Find(nyTolk.postnr);
 
-        //        if (eksistererPostnr == null)
-        //        {
-        //            var nyttpoststed = new Poststed()
-        //            {
-        //                postNr = innAdmin.postNr,
-        //                postSted = innAdmin.postSted
+                if (spraakFunnet == null)
+                {
+                    var nyttpoststed = new Poststed()
+                    {
+                        postNr = nyTolk.postnr,
+                        postSted = nyTolk.poststed
 
-        //            };
-        //            nyAdmin.poststed = nyttpoststed;
+                    };
+                    dbTolk.poststed = nyttpoststed;
 
-        //        }
-        //        else
-        //        {
-        //            nyAdmin.poststed = eksistererPostnr;
-        //        }
-        //        db.Personer.Add(nyAdmin);
-        //        db.SaveChanges();
+                }
+                else
+                {
+                    dbTolk.poststed = spraakFunnet;
+                }
+                db.Personer.Add(dbTolk);
+                db.SaveChanges();
 
-        //        return true;
-        //    }
-        //    catch (Exception feil)
-        //    {
-        //        Debug.WriteLine("Exception Message: " + feil.Message);
-        //        return false;
-        //    }
-        //}
+                return true;
+            }
+            catch (Exception feil)
+            {
+                Debug.WriteLine("Exception Message: " + feil.Message);
+                return false;
+            }
+        }
 
 
-   
+        public List<Tolk_VM> ListeAlleTolk()
+        {
+            var db = new DbNetcont();
+
+            List<Tolk> alleTolk= db.Personer.OfType<Tolk>().ToList();
+            try
+            {
+                List<Tolk_VM> utListe = new List<Tolk_VM>();
+                foreach (var row in alleTolk)
+                {
+                    if (true)
+                    {
+                        var Tolk = new Tolk_VM()
+                        {
+                            persId = row.persId,
+                            fornavn = row.fornavn,
+                            etternavn = row.etternavn,
+                            tlf = row.tlf,
+                            postnr = row.poststed.postNr,
+                            poststed = row.poststed.postSted,
+                            email = row.email,
+                            adresse = row.adresse,
+                            godkjent = row.godkjent
+                        };
+                        utListe.Add(Tolk);
+                    }
+                }
+                return utListe;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        /**********************************************************Tolk-slutt*****************************/
+
+
 
         /// <summary>
         /// this will find and re turn a person

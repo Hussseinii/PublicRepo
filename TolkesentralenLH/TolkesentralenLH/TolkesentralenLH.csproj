@@ -213,6 +213,8 @@
     <Content Include="Views\Spraak\RegSpraak.cshtml" />
     <Content Include="Views\Spraak\ListSpraak.cshtml" />
     <Content Include="Views\Oppdrags\regOppdragTolk.cshtml" />
+    <Content Include="Views\Kundes\RegTolk.cshtml" />
+    <Content Include="Views\Kundes\ListTolk.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

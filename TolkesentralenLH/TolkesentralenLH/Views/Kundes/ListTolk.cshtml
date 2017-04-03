@@ -1,0 +1,95 @@
+﻿@model IEnumerable<TolkesentralenLH.ViewModels.Tolk_VM>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListTolk</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "RegTolk")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.persId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fornavn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.etternavn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tlf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adresse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postnr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.poststed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.godkjent)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.persId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fornavn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.etternavn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tlf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adresse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postnr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.poststed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.godkjent)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -82,3 +82,4 @@ C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Mvc.xml
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache

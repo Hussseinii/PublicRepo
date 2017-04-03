@@ -24,15 +24,21 @@ namespace TolkesentralenLH.ViewModels
         public string firma { get; set; }
         public string kontaktperson { get; set; }
         public int telefax { get; set; }
-        public string epost { get; set; }
-        public string passord { get; set; }
         public string fakturaadresse { get; set; }
     }
+
+    public class Tolk_VM : Person_VM
+    {
+
+    }
+
+
 
     public class Post_Login_VM{
         public string passord { get; set; }
         public string brukernavn { get; set; }
     }
+
 
     public class Get_Login_VM
     {

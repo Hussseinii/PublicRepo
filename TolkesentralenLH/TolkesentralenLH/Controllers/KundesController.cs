@@ -40,7 +40,39 @@ namespace TolkesentralenLH.Controllers
             }
             return View();
         }
+        /**********************************************************Tolk-start*****************************/
+        public ActionResult RegTolk()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult RegTolk(Tolk_VM innTolk)
+        {
+            if (true)
+            {
+                var DbPerson = new DbPerson();
+
+                bool insertOK = DbPerson.settinnTolk(innTolk);
+                if (insertOK)
+                {
+                    return RedirectToAction("ListTolk");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult ListTolk()
+        {
+
+            List<Tolk_VM> alleTolk= db.ListeAlleTolk();
+            return View(alleTolk);
+        }
+
+
+
+
+        /**********************************************************Tolk-slutt*****************************/
 
     }
 }

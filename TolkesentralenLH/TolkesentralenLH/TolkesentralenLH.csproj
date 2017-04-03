@@ -129,101 +129,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\.DS_Store" />
-    <Content Include="app\admin\admin-navbar.component.html" />
-    <Content Include="app\admin\admin-navbar.component.js" />
-    <Content Include="app\admin\admin-navbar.component.js.map" />
-    <Content Include="app\admin\admin-oppdrag.js" />
-    <Content Include="app\admin\admin-oppdrag.js.map" />
-    <Content Include="app\admin\admin-routing.module.js" />
-    <Content Include="app\admin\admin-routing.module.js.map" />
-    <Content Include="app\admin\admin.component.html" />
-    <Content Include="app\admin\admin.component.js" />
-    <Content Include="app\admin\admin.component.js.map" />
-    <Content Include="app\admin\admin.module.js" />
-    <Content Include="app\admin\admin.module.js.map" />
-    <Content Include="app\admin\manage-crises.component.js" />
-    <Content Include="app\admin\manage-crises.component.js.map" />
-    <Content Include="app\admin\oppdrag.component.html" />
-    <Content Include="app\admin\oppdrag.component.js" />
-    <Content Include="app\admin\oppdrag.component.js.map" />
-    <Content Include="app\admin\oppdrag.js" />
-    <Content Include="app\admin\oppdrag.js.map" />
-    <Content Include="app\admin\oversettelse.component.html" />
-    <Content Include="app\admin\oversettelse.component.js" />
-    <Content Include="app\admin\oversettelse.component.js.map" />
-    <Content Include="app\admin\oversettelser.component.js" />
-    <Content Include="app\admin\oversettelser.component.js.map" />
-    <Content Include="app\admin\utdel.component.html" />
-    <Content Include="app\admin\utdel.component.js" />
-    <Content Include="app\admin\utdel.component.js.map" />
-    <Content Include="app\app-routing.module.js" />
-    <Content Include="app\app-routing.module.js.map" />
-    <Content Include="app\app.component.js" />
-    <Content Include="app\app.component.js.map" />
-    <Content Include="app\app.module.js" />
-    <Content Include="app\app.module.js.map" />
-    <Content Include="app\auth.service.js" />
-    <Content Include="app\auth.service.js.map" />
-    <Content Include="app\home\home-routing.module.js" />
-    <Content Include="app\home\home-routing.module.js.map" />
-    <Content Include="app\home\home.component.html" />
-    <Content Include="app\home\home.component.js" />
-    <Content Include="app\home\home.component.js.map" />
-    <Content Include="app\home\home.module.js" />
-    <Content Include="app\home\home.module.js.map" />
-    <Content Include="app\kunde\kunde-routing.module.js" />
-    <Content Include="app\kunde\kunde-routing.module.js.map" />
-    <Content Include="app\kunde\kunde.component.html" />
-    <Content Include="app\kunde\kunde.component.js" />
-    <Content Include="app\kunde\kunde.component.js.map" />
-    <Content Include="app\kunde\kunde.komponent.js" />
-    <Content Include="app\kunde\kunde.komponent.js.map" />
-    <Content Include="app\kunde\kunde.module.js" />
-    <Content Include="app\kunde\kunde.module.js.map" />
-    <Content Include="app\login\login.comonent.js" />
-    <Content Include="app\login\login.comonent.js.map" />
-    <Content Include="app\login\login.component.html" />
-    <Content Include="app\routing-module.js" />
-    <Content Include="app\routing-module.js.map" />
-    <Content Include="app\shared\not-found.component.js" />
-    <Content Include="app\shared\not-found.component.js.map" />
-    <Content Include="app\tolk.component.js" />
-    <Content Include="app\tolk.component.js.map" />
-    <Content Include="app\tolk\tolk-routing.module.js" />
-    <Content Include="app\tolk\tolk-routing.module.js.map" />
-    <Content Include="app\tolk\tolk.component.html" />
-    <Content Include="app\tolk\tolk.component.js" />
-    <Content Include="app\tolk\tolk.component.js.map" />
-    <Content Include="app\tolk\tolk.module.js" />
-    <Content Include="app\tolk\tolk.module.js.map" />
-    <Content Include="app\_guards\auth-guard.js" />
-    <Content Include="app\_guards\auth-guard.js.map" />
-    <Content Include="app\_guards\auth.guard.js" />
-    <Content Include="app\_guards\auth.guard.js.map" />
-    <Content Include="app\_helpers\fake-backend.js" />
-    <Content Include="app\_helpers\fake-backend.js.map" />
-    <Content Include="app\_models\brukere.js" />
-    <Content Include="app\_models\brukere.js.map" />
-    <Content Include="app\_models\login.js" />
-    <Content Include="app\_models\login.js.map" />
-    <Content Include="app\_models\models.js" />
-    <Content Include="app\_models\models.js.map" />
-    <Content Include="app\_models\user.js" />
-    <Content Include="app\_models\user.js.map" />
-    <Content Include="app\_services\.DS_Store" />
-    <Content Include="app\_services\auth.service.js" />
-    <Content Include="app\_services\auth.service.js.map" />
-    <Content Include="app\_services\data.service.js" />
-    <Content Include="app\_services\data.service.js.map" />
-    <Content Include="app\_services\navbar.service.js" />
-    <Content Include="app\_services\navbar.service.js.map" />
-    <Content Include="app\_services\oppdrag.service.js" />
-    <Content Include="app\_services\oppdrag.service.js.map" />
-    <Content Include="app\_services\temp.service.js" />
-    <Content Include="app\_services\temp.service.js.map" />
-    <Content Include="app\_services\user.service.js" />
-    <Content Include="app\_services\user.service.js.map" />
     <Content Include="Content\bootstrap-lemen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -232,44 +137,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="Model2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.cs</LastGenOutput>
-    </Content>
     <Content Include="ClassDiagram1.cd" />
-    <EntityDeploy Include="Model2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Model3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model3.edmx.diagram">
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Content>
-    <Content Include="package.json" />
-    <Content Include="app\npm-debug.log" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -286,8 +154,18 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="styles.css" />
-    <Content Include="systemjs.config.js" />
+    <Content Include="Views\Home\Liste.cshtml" />
+    <Content Include="Views\Home\ListeAlleAdmin.cshtml" />
+    <Content Include="Views\Home\ListeAlleTolk.cshtml" />
+    <Content Include="Views\Home\ListeKunde.cshtml" />
+    <Content Include="Views\Home\Registrer.cshtml" />
+    <Content Include="Views\Home\RegistrerAdmin.cshtml" />
+    <Content Include="Views\Home\RegistrerTolk.cshtml" />
+    <Content Include="Views\Kundes\ListeKunde.cshtml" />
+    <Content Include="Views\Kundes\Registrer.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -301,44 +179,16 @@
     <Compile Include="Fil.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DbNetcont.cs" />
     <Compile Include="Models\Fil.cs" />
     <Compile Include="Models\Oppdrag.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Poststed.cs" />
+
     <Compile Include="Models\Spraaak.cs" />
     <Compile Include="Oppdrag.cs">
       <DependentUpon>Model3.tt</DependentUpon>
@@ -349,34 +199,25 @@
     <Compile Include="Poststed.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Spraak.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DbOppdrag.cs" />
     <Compile Include="Repository\DbPerson.cs" />
-    <Compile Include="Spraak.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\Oppdrag_vm.cs" />
     <Compile Include="ViewModels\Person_vm.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Liste.cshtml" />
-    <Content Include="Views\Home\Registrer.cshtml" />
-    <Content Include="Views\Home\RegistrerTolk.cshtml" />
-    <Content Include="Views\Home\ListeKunde.cshtml" />
-    <Content Include="Views\Home\ListeAlleTolk.cshtml" />
-    <Content Include="Views\Home\ListeAlleAdmin.cshtml" />
-    <Content Include="Views\Home\RegistrerAdmin.cshtml" />
-    <Content Include="tsconfig.json" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+
     <Content Include="Views\Kundes\Registrer.cshtml" />
     <Content Include="Views\Kundes\ListeKunde.cshtml" />
     <Content Include="Views\Spraak\RegSpraak.cshtml" />
     <Content Include="Views\Spraak\ListSpraak.cshtml" />
+    <Content Include="Views\Oppdrags\regOppdragTolk.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -386,43 +227,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Oppdrags\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="app\admin\admin-navbar.component.ts" />
-    <TypeScriptCompile Include="app\admin\admin-routing.module.ts" />
-    <TypeScriptCompile Include="app\admin\admin.component.ts" />
-    <TypeScriptCompile Include="app\admin\admin.module.ts" />
-    <TypeScriptCompile Include="app\admin\oppdrag.component.ts" />
-    <TypeScriptCompile Include="app\admin\oversettelse.component.ts" />
-    <TypeScriptCompile Include="app\admin\utdel.component.ts" />
-    <TypeScriptCompile Include="app\app-routing.module.ts" />
-    <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\home\home-routing.module.ts" />
-    <TypeScriptCompile Include="app\home\home.component.ts" />
-    <TypeScriptCompile Include="app\home\home.module.ts" />
-    <TypeScriptCompile Include="app\kunde\kunde-routing.module.ts" />
-    <TypeScriptCompile Include="app\kunde\kunde.component.ts" />
-    <TypeScriptCompile Include="app\kunde\kunde.module.ts" />
-    <TypeScriptCompile Include="app\login\login.comonent.ts" />
-    <TypeScriptCompile Include="app\shared\not-found.component.ts" />
-    <TypeScriptCompile Include="app\tolk\tolk-routing.module.ts" />
-    <TypeScriptCompile Include="app\tolk\tolk.component.ts" />
-    <TypeScriptCompile Include="app\tolk\tolk.module.ts" />
-    <TypeScriptCompile Include="app\_guards\auth.guard.ts" />
-    <TypeScriptCompile Include="app\_helpers\fake-backend.ts" />
-    <TypeScriptCompile Include="app\_models\login.ts" />
-    <TypeScriptCompile Include="app\_models\models.ts" />
-    <TypeScriptCompile Include="app\_services\auth.service.ts" />
-    <TypeScriptCompile Include="app\_services\data.service.ts" />
-    <TypeScriptCompile Include="app\_services\oppdrag.service.ts" />
-    <TypeScriptCompile Include="app\_services\temp.service.ts" />
-    <TypeScriptCompile Include="main.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -441,6 +249,8 @@
           <DevelopmentServerPort>3933</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:3933/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:3933/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

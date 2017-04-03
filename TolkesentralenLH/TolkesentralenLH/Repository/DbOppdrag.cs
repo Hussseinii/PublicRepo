@@ -148,7 +148,7 @@ namespace TolkesentralenLH.Models
             return null;
         }
 
-        public List<Tolking_vm> listOppdrag_fremmate()
+        public List<Tolking_vm> listOppdragTolk()
         {
             // return db.Oppdrag.ToList();
             List<Tolking> alleFramaate = db.Oppdrag.OfType<Tolking>().ToList();

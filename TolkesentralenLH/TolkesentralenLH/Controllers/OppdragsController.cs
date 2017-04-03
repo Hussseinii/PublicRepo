@@ -4,17 +4,44 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TolkesentralenLH.Models;
+using TolkesentralenLH.ViewModels;
 
 namespace TolkesentralenLH.Controllers
 {
     public class OppdragsController : Controller
     {
+        DbOppdrag dbOppdrag = new DbOppdrag();
         // GET: Oppdrags
-        public ActionResult Index()
+        public ActionResult listOppdragTolk()
         {
+
+            List<Tolking_vm> alleTolkOppdrag = dbOppdrag.listOppdragTolk();
+            return View(alleTolkOppdrag);
+        }
+
+        public ActionResult regOppdragTolk()
+        {
+
             return View();
         }
 
-      
+
+        [HttpPost]
+        public ActionResult regOppdragTolk(Tolking_vm nyOppdrag)
+        {
+            
+            if (true)
+            {
+
+                bool insertOK = dbOppdrag.regTolkOppdrag(nyOppdrag, nyOppdrag.kundeID);
+                if (insertOK)
+                {
+                    return RedirectToAction("listOppdragTolk");
+                }
+            }
+            return View();
+        }
+
+
     }
 }

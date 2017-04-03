@@ -132,17 +132,25 @@ C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\Sy
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Mvc.xml
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csc.exe
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csc.exe.config
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csc.rsp
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csi.exe
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csi.exe.config
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csi.rsp
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.Win32.Primitives.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.AppContext.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Console.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Diagnostics.Process.dll
@@ -152,6 +160,7 @@ C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.IO.Pipes.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Security.Claims.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Security.Cryptography.Algorithms.dll
@@ -166,8 +175,10 @@ C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Xml.XPath.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\vbc.exe
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\vbc.exe.config
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\vbc.rsp
+<<<<<<< Updated upstream
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\csc.exe
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -178,6 +189,8 @@ C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\vbc.exe
+=======
+>>>>>>> Stashed changes
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\VBCSCompiler.exe
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\TolkesentralenLH.dll.config
@@ -214,6 +227,12 @@ C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Webpages.Razor.xml
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Helpers.xml
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Mvc.xml
+<<<<<<< Updated upstream
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
+=======
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
+C:\Users\husse_000\Desktop\Gittesst\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache
+>>>>>>> Stashed changes

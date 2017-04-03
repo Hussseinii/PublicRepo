@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.Mvc;
 using TolkesentralenLH.Models;
 using TolkesentralenLH.ViewModels;
 
@@ -11,7 +12,7 @@ namespace TolkesentralenLH.Models
 {
     public class DbPerson
     {
-       // DbNetcont db = new DbNetcont();
+        DbNetcont db = new DbNetcont();
 
 
         // List alle kunder. Enten godkjente (1) eller til godkjenning (0)
@@ -309,6 +310,41 @@ namespace TolkesentralenLH.Models
         }
 
 
+        public bool RegSprakkPåTolk(int TolkId, Spraak spraak)
+        {
+            // Spraak funnetspraak = db.Spraak.FirstOrDefault(s => s.navn == spraak.navn);
+
+             var funnetspraak = db.Spraak.SqlQuery(" SELECT * FROM dbo.Spraak WHERE 'navn' = Norsk").ToList();
+
+            //(s => s.navn == spraak.navn)
+            Tolk funnetTolk = db.Personer.OfType<Tolk>().FirstOrDefault(t => t.persId == TolkId);
+           
+            if(funnetspraak != null && funnetTolk != null)
+            {
+
+                funnetTolk.spraak.Add(funnetspraak.Last());
+                db.SaveChanges();
+                return true;
+            }
+            else if (funnetTolk != null)
+            {
+                var nySpraak = new Spraak()
+                {
+                    navn = spraak.navn,
+                    nivaa = spraak.nivaa
+                };
+
+                funnetTolk.spraak.Add(nySpraak);
+                db.SaveChanges();
+                return true;
+
+            }else
+            {
+                return false;
+            }
+
+            
+        }
         /**********************************************************Tolk-slutt*****************************/
 
 

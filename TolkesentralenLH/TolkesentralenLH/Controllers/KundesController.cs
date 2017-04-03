@@ -62,9 +62,31 @@ namespace TolkesentralenLH.Controllers
             return View();
         }
 
-        public ActionResult ListTolk()
+        public ActionResult RegSpraakPåTolk()
         {
 
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegSpraakPåTolk(int tolkID, Spraak sp)
+        {
+            if (true)
+            {
+                var DbPerson = new DbPerson();
+
+                bool insertOK = DbPerson.RegSprakkPåTolk(tolkID, sp);
+                if (insertOK)
+                {
+                    return RedirectToAction("ListTolk");
+                }
+            }
+            return View();
+        }
+        public ActionResult ListTolk()
+        {
+            
             List<Tolk_VM> alleTolk= db.ListeAlleTolk();
             return View(alleTolk);
         }

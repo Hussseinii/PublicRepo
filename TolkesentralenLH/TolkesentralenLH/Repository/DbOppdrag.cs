@@ -77,13 +77,9 @@ namespace TolkesentralenLH.Models
 
                 foreach(var f in nyOppdrag.fil)
                 {
-                    var nyFil = new Fil()
-                    {
-                        type = f.type,
-                        size = f.size,
-                    };
+                    
 
-                    oppdragDb.fil.Add(nyFil);
+                    oppdragDb.fil.Add(f);
                 }
 
                  

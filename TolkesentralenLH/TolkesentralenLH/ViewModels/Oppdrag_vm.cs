@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TolkesentralenLH.Models;
 
 namespace TolkesentralenLH.ViewModels
 {
@@ -37,7 +36,7 @@ namespace TolkesentralenLH.ViewModels
     {
 
         public string frist { get; set; }
-        public List<Fil> fil { get; set; }
+        public List<Models.Fil> fil { get; set; }
 
 
 

@@ -44,7 +44,7 @@ namespace TolkesentralenLH.Models
     {
 
 
-        public List<Spraaak> spraak { get; set; }
+        public List<Spraak> spraak { get; set; }
 
         public List<Oppdrag> oppdrag { get; set; }
 

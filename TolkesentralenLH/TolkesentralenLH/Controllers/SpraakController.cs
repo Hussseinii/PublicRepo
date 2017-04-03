@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TolkesentralenLH.Models;
+using TolkesentralenLH.Repository;
 
 namespace TolkesentralenLH.Controllers
 {
     public class SpraakController : Controller
     {
-        DbNetcont db = new DbNetcont();
+        DbSpraak db = new DbSpraak();
         // GET: Spraak
         public ActionResult RegSpraak()
         {
@@ -18,13 +19,13 @@ namespace TolkesentralenLH.Controllers
         }
 
         [HttpPost]
-        public ActionResult RegSpraak(Spraaak nyttSpraak)
+        public ActionResult RegSpraak(Spraak nyttSpraak)
         {
             if(true)
             {
 
-                db.Spraak.Add(nyttSpraak);
-                db.SaveChanges();
+                db.RegSpraak(nyttSpraak);
+                
             }
 
             return RedirectToAction("ListSpraak");
@@ -32,9 +33,8 @@ namespace TolkesentralenLH.Controllers
 
         public ActionResult ListSpraak()
         {
-           
 
-            return View(db.Spraak.ToList());
+            return View(db.ListSpraak());
         }
 
 

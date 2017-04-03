@@ -1,33 +1,38 @@
-﻿@model IEnumerable<TolkesentralenLH.Models.Spraaak>
+﻿@model IEnumerable<TolkesentralenLH.Models.Spraak>
 
 @{
-    ViewBag.Title = "ListSpraak";
+    Layout = null;
 }
 
-<h2>ListSpraak</h2>
+<!DOCTYPE html>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.navn)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.navn)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.spraakId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.spraakId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.spraakId })
-        </td>
-    </tr>
-}
-
-</table>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListSpraak</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "RegSpraak")
+    </p>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.navn)</th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.navn)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.navn }) |
+                @Html.ActionLink("Details", "Details", new { id=item.navn }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.navn })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

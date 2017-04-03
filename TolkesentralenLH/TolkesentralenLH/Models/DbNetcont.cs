@@ -19,7 +19,7 @@ namespace TolkesentralenLH.Models
         // public DbSet<Oppdrag> Oppdrager { get; set; }
 
         public DbSet<Person> Personer { get; set; }
-        public DbSet<Spraaak> Spraak { get; set; }
+        public DbSet<Spraak> Spraak { get; set; }
         public DbSet<Poststed> Poststeder { get; set; }
         public DbSet<Oppdrag> Oppdrag { get; set; }
         public DbSet<Fil> Filer { get; set; }

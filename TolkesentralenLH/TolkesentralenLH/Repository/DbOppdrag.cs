@@ -71,16 +71,17 @@ namespace TolkesentralenLH.Models
                     spraakTil = nyOppdrag.tilspraak,
                     regDato = DateTime.Now,
                     frist = nyOppdrag.frist,
+                    oppdragType = nyOppdrag.typetolk,
                     andreOpplisning = nyOppdrag.andreopplysninger,
-
+                    
                 };
 
-                foreach(var f in nyOppdrag.fil)
-                {
+                //foreach(var f in nyOppdrag.fil)
+                //{
                     
 
-                    oppdragDb.fil.Add(f);
-                }
+                //    oppdragDb.fil.Add(f);
+                //}
 
                  
 

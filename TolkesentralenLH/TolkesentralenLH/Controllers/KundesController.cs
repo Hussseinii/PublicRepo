@@ -87,8 +87,8 @@ namespace TolkesentralenLH.Controllers
         public ActionResult ListTolk()
         {
             
-            List<Tolk_VM> alleTolk= db.ListeAlleTolk();
-            return View(alleTolk);
+           // List<Tolk_VM> alleTolk= db.ListeAlleTolk();
+            return View(db.ListeAlleTolkSomSnakkeDetSprrak(1, 2));
         }
 
 

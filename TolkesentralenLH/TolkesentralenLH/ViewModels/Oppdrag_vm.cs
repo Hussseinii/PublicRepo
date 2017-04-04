@@ -13,14 +13,13 @@ namespace TolkesentralenLH.ViewModels
         public string dato { get; set; }
         public string fraspraak { get; set; }
         public string tilspraak { get; set; }
+        public string typetolk { get; set; }
         public string andreopplysninger { get; set; }
     }
 
     public class Tolking_vm : Oppdrag_VM
     {
 
-
-        public string typetolk { get; set; }
         public string sted { get; set; }
         public string oppdragsdato { get; set; }
 
@@ -36,7 +35,7 @@ namespace TolkesentralenLH.ViewModels
     {
 
         public string frist { get; set; }
-        public List<Models.Fil> fil { get; set; }
+        //public List<Models.Fil> fil { get; set; }
 
 
 

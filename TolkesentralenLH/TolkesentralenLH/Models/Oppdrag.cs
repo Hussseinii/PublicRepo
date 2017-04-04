@@ -17,6 +17,7 @@ namespace TolkesentralenLH.Models
         public string spraakFra { get; set; }
 
         public string spraakTil { get; set; }
+        public string oppdragType { get; set; }
         public string andreOpplisning { get; set; }
 
         public virtual Kunde kunde { get; set; }
@@ -28,8 +29,6 @@ namespace TolkesentralenLH.Models
     public class Tolking : Oppdrag
     {
 
-
-        public string oppdragType { get; set; }
         public string oppdragsAddres { get; set; }
         public string oppdragsDato { get; set; }
         public string tidFra { get; set; }

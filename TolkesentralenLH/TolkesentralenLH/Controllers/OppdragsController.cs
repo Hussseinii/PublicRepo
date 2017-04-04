@@ -19,6 +19,13 @@ namespace TolkesentralenLH.Controllers
             return View(alleTolkOppdrag);
         }
 
+        public ActionResult listOppdragOversettelse()
+        {
+
+            List<Tolking_vm> alleTolkOppdrag = dbOppdrag.listOppdragTolk();
+            return View(alleTolkOppdrag);
+        }
+
         public ActionResult regOppdragTolk()
         {
 
@@ -34,6 +41,30 @@ namespace TolkesentralenLH.Controllers
             {
 
                 bool insertOK = dbOppdrag.regTolkOppdrag(nyOppdrag, nyOppdrag.kundeID);
+                if (insertOK)
+                {
+                    return RedirectToAction("listOppdragTolk");
+                }
+            }
+            return View();
+        }
+
+
+        public ActionResult regOppdragOversettelse()
+        {
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult regOppdragOversettelse(Oversettelse_vm nyOppdrag)
+        {
+
+            if (true)
+            {
+
+                bool insertOK = dbOppdrag.regOppdragOverssettelse(nyOppdrag, nyOppdrag.kundeID);
                 if (insertOK)
                 {
                     return RedirectToAction("listOppdragTolk");

@@ -312,9 +312,9 @@ namespace TolkesentralenLH.Models
 
         public bool RegSprakkPåTolk(int TolkId, Spraak spraak)
         {
-            // Spraak funnetspraak = db.Spraak.FirstOrDefault(s => s.navn == spraak.navn);
+            Spraak funnetspraak = db.Spraak.Find(spraak.spraakId);
 
-             var funnetspraak = db.Spraak.SqlQuery(" SELECT * FROM dbo.Spraak WHERE 'navn' = Norsk").ToList();
+            // var funnetspraak = db.Spraak.SqlQuery(" SELECT * FROM dbo.Spraak WHERE 'navn' = Norsk").ToList();
 
             //(s => s.navn == spraak.navn)
             Tolk funnetTolk = db.Personer.OfType<Tolk>().FirstOrDefault(t => t.persId == TolkId);
@@ -322,29 +322,56 @@ namespace TolkesentralenLH.Models
             if(funnetspraak != null && funnetTolk != null)
             {
 
-                funnetTolk.spraak.Add(funnetspraak.Last());
+                funnetTolk.spraak.Add(funnetspraak);
                 db.SaveChanges();
                 return true;
             }
-            else if (funnetTolk != null)
-            {
-                var nySpraak = new Spraak()
-                {
-                    navn = spraak.navn,
-                    nivaa = spraak.nivaa
-                };
-
-                funnetTolk.spraak.Add(nySpraak);
-                db.SaveChanges();
-                return true;
-
-            }else
+            else
             {
                 return false;
             }
 
             
         }
+
+       public List<Tolk_VM> ListeAlleTolkSomSnakkeDetSprrak(int spraakId, int spraakId2)
+        {
+
+            var db = new DbNetcont();
+
+            List<Tolk> alleTolk = db.Personer.OfType<Tolk>().ToList();
+            try
+            {
+                List<Tolk_VM> utListe = new List<Tolk_VM>();
+                foreach (var row in alleTolk)
+                {
+                    if (row.spraak.Contains(db.Spraak.Find(spraakId)) && row.spraak.Contains(db.Spraak.Find(spraakId2)))
+                    {
+                        var Tolk = new Tolk_VM()
+                        {
+                            persId = row.persId,
+                            fornavn = row.fornavn,
+                            etternavn = row.etternavn,
+                            tlf = row.tlf,
+                            postnr = row.poststed.postNr,
+                            poststed = row.poststed.postSted,
+                            email = row.email,
+                            adresse = row.adresse,
+                            godkjent = row.godkjent
+                        };
+                        utListe.Add(Tolk);
+                    }
+                }
+                return utListe;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+
         /**********************************************************Tolk-slutt*****************************/
 
 

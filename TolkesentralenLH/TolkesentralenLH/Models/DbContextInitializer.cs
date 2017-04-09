@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 using TolkesentralenLH.Models;
+using TolkesentralenLH.Repository;
 using TolkesentralenLH.ViewModels;
 
 namespace TolkesentralenLH.Models
@@ -23,7 +22,7 @@ namespace TolkesentralenLH.Models
 
             try
             {
-                
+
 
                 db.Poststeder.Add(new Poststed() { postNr = 2050, postSted = "Jessheim" });
                 db.Poststeder.Add(new Poststed() { postNr = 2060, postSted = "Gardermoen" });
@@ -32,7 +31,8 @@ namespace TolkesentralenLH.Models
 
                 //Poststed errorfix = db.Poststeder.Find("2050");
 
-                var kunde = new Kunde() {
+                var kunde = new Kunde()
+                {
                     fornavn = "Emilie",
                     etternavn = "Nice",
                     tlf = 9595995,
@@ -45,7 +45,7 @@ namespace TolkesentralenLH.Models
                     firma = "Firma1",
                     kontaktperson = "Kontaktperson",
                     telefax = 999999,
-                    fakturaAddress = "fakAdresse" 
+                    fakturaAddress = "fakAdresse"
                 };
 
                 var kunde2 = new Kunde()
@@ -87,7 +87,7 @@ namespace TolkesentralenLH.Models
                     fornavn = "Bob",
                     etternavn = "Marley",
                     tlf = 9595995,
-                    email = "kunde@kunde.no",
+                    email = "bob@kunde.no",
                     adresse = "addresse1",
                     regDato = DateTime.Now,
                     godkjent = 0,
@@ -102,7 +102,7 @@ namespace TolkesentralenLH.Models
                 var kunde5 = new Kunde()
                 {
                     fornavn = "Rassmus",
-                    etternavn = "Bothholes",
+                    etternavn = "M",
                     tlf = 9595995,
                     email = "rassmus@kunde.no",
                     adresse = "addresse1",
@@ -138,10 +138,10 @@ namespace TolkesentralenLH.Models
                 var lillehammer = db.Poststeder.Find(2061);
                 kunde.poststed = jessheim;
                 kunde2.poststed = gardermoden;
-                kunde3.poststed = lillehammer;
+                kunde3.poststed = jessheim;
                 kunde4.poststed = jessheim;
                 kunde5.poststed = gardermoden;
-                kunde6.poststed = lillehammer;
+                kunde6.poststed = jessheim;
 
                 db.Personer.Add(kunde);
                 db.Personer.Add(kunde2);
@@ -150,6 +150,8 @@ namespace TolkesentralenLH.Models
                 db.Personer.Add(kunde5);
                 db.Personer.Add(kunde6);
                 db.SaveChanges();
+
+
 
                 var admin = new Admin()
                 {
@@ -163,14 +165,53 @@ namespace TolkesentralenLH.Models
                     password = res.lagHash("1234" + saltKunde),
                     Salt = saltKunde
                 };
-                
+                admin.poststed = jessheim;
+                db.Personer.Add(admin);
+                db.SaveChanges();
 
-                var tolk = new Tolk()
+                var spraak1 = new Spraak()
+                {
+
+                    navn = "Norsk",
+                    nivaa = "F"
+
+                };
+                var spraak2 = new Spraak()
+                {
+
+                    navn = "Somalisk",
+                    nivaa = "F"
+
+                };
+                var spraak3 = new Spraak()
+                {
+
+                    navn = "Lugandisk",
+                    nivaa = "F"
+
+                };
+
+                var spraak4 = new Spraak()
+                {
+
+                    navn = "Afganisk",
+                    nivaa = "F"
+
+                };
+
+                //db.Spraak.Add(spraak1);
+                //db.Spraak.Add(spraak2);
+                //db.Spraak.Add(spraak3);
+                //db.Spraak.Add(spraak4);
+                //db.SaveChanges();
+
+
+                var tolk1 = new Tolk()
                 {
                     fornavn = "TolkFornavn",
                     etternavn = "TolkEtternavn",
                     tlf = 9595995,
-                    email = "tolk@tolk.no",
+                    email = "tolk1@tolk.no",
                     adresse = "addresse1",
                     regDato = DateTime.Now,
                     godkjent = 0,
@@ -178,81 +219,143 @@ namespace TolkesentralenLH.Models
                     Salt = saltKunde
                 };
 
-                
-                db.Personer.Add(admin);
-                db.Personer.Add(tolk);
+                var tolk2 = new Tolk()
+                {
+                    fornavn = "Lars",
+                    etternavn = "Flexnes",
+                    tlf = 9595995,
+                    email = "tolk2@tolk.no",
+                    adresse = "addresse1",
+                    regDato = DateTime.Now,
+                    godkjent = 0,
+                    password = res.lagHash("1234" + saltKunde),
+                    Salt = saltKunde
+                };
+
+                var tolk3 = new Tolk()
+                {
+                    fornavn = "Bjarne",
+                    etternavn = "Tolk",
+                    tlf = 9595995,
+                    email = "tolk3@tolk.no",
+                    adresse = "addresse1",
+                    regDato = DateTime.Now,
+                    godkjent = 0,
+                    password = res.lagHash("1234" + saltKunde),
+                    Salt = saltKunde
+                };
+
+                var tolk4 = new Tolk()
+                {
+                    fornavn = "Rambo",
+                    etternavn = "Ammok",
+                    tlf = 9595995,
+                    email = "rambo1@tolk.no",
+                    adresse = "addresse1",
+                    regDato = DateTime.Now,
+                    godkjent = 0,
+                    password = res.lagHash("1234" + saltKunde),
+                    Salt = saltKunde,
+                    //spraak = {}
+                };
+
+                tolk1.poststed = jessheim;
+                tolk2.poststed = jessheim;
+                tolk3.poststed = jessheim;
+                tolk4.poststed = jessheim;
+                //db.SaveChanges();
+
+                tolk1.spraak = new List<Spraak>();
+                tolk2.spraak = new List<Spraak>();
+                tolk3.spraak = new List<Spraak>();
+                tolk4.spraak = new List<Spraak>();
+
+
+                tolk1.spraak.Add(spraak2);
+                tolk1.spraak.Add(spraak3);
+                tolk1.spraak.Add(spraak4);
+
+                tolk2.spraak.Add(spraak2);
+                tolk2.spraak.Add(spraak3);
+                tolk2.spraak.Add(spraak4);
+
+                //tolk2.spraak.Add(spraak1);
+                //tolk2.spraak.Add(spraak2);
+
+                tolk3.spraak.Add(spraak2);
+                tolk3.spraak.Add(spraak3);
+                tolk3.spraak.Add(spraak4);
+
+                tolk4.spraak.Add(spraak1);
+                tolk4.spraak.Add(spraak2);
+
+                db.SaveChanges();
+
+
+                db.Personer.Add(tolk1);
+                db.Personer.Add(tolk2);
+                db.Personer.Add(tolk3);
+                db.Personer.Add(tolk4);
 
                 db.SaveChanges();
 
 
 
 
-                DateTime localDate = DateTime.Now;
-                // Kunde oppdragB = db.Personer.OfType<Kunde>().FirstOrDefault(k => k.persId == 3);
+                //DateTime localDate = DateTime.Now;
 
-                //var oppdrag1 = new Tolking_vm()
-                //{
-                //    oppdragsDato = "12-12-2016",
-                //    oppdragType = "Telefontolk",
-                //    spraakFra = "Spansk",
-                //    spraakTil = "Norsk",
-                //    tidFra = "12:45",
-                //    tidTil = "13:45"
-                //    //kunde = db.Personer.OfType<Kunde>().FirstOrDefault(k => k.persId == 1),
-
-                //};
 
                 var oppdrag1 = new Tolking_vm()
                 {
+                    oppdragsdato = "11-05-2017",
+                    dato = "12-07-2017",
                     fraspraak = "Spansk",
                     tilspraak = "Norsk",
-                    typetolk = "Fremmøte",
-                    sted = "hioa",
-                    frakl = "12:45",
-                    tilkl = "12:45",
-                    oppdragsdato = "imorn",
-                    andreopplysninger = "snarest haster"
-                    //kunde = db.Personer.OfType<Kunde>().FirstOrDefault(k => k.persId == 1),
-
+                    andreopplysninger = "Dette er andre opplysninger",
+                    typetolk = "Telefontolk",
+                    sted = "HIOA pilestredet 35",
+                    frakl = "13:15",
+                    tilkl = "14:15",
+                    
                 };
-                var oppdrag2 = new Oversettelse_vm()
+
+                var oppdrag2 = new Tolking_vm()
                 {
-                    fraspraak = "Spansk",
+                    oppdragsdato = "12-05-2017",
+                    dato = "12-07-2017",
+                    fraspraak = "Italiensk",
                     tilspraak = "Norsk",
-                    typetolk = "Fremmøte",
-                    frist = "idag",
-                    andreopplysninger = "snarest haster"
-                   
-
+                    andreopplysninger = "Dette er andre opplysninger",
+                    typetolk = "Fremmedmøte",
+                    sted = "HIOA pilestredet 35",
+                    frakl = "10:15",
+                    tilkl = "12:15"
                 };
-                var oppdrag3 = new Oversettelse_vm()
+
+                var oppdrag3 = new Tolking_vm()
                 {
-                    fraspraak = "Spansk",
+                    oppdragsdato = "07-05-2017",
+                    dato = "12-07-2017",
+                    fraspraak = "Fransk",
                     tilspraak = "Norsk",
-                    typetolk = "Fremmøte",
-                    frist = "idag",
-                    andreopplysninger = "snarest haster"
-
-
+                    andreopplysninger = "Dette er andre opplysninger",
+                    typetolk = "Telefontolk",
+                    sted = "HIOA pilestredet 35",
+                    frakl = "11:15",
+                    tilkl = "13:15"
                 };
-                var oppdrag4 = new Oversettelse_vm()
-                {
-                    fraspraak = "Spansk",
-                    tilspraak = "Norsk",
-                    typetolk = "Fremmøte",
-                    frist = "idag",
-                    andreopplysninger = "snarest haster"
-
-
-                };
-
                 var o = new DbOppdrag();
+                var f = new DbForessporsel();
                 o.regTolkOppdrag(oppdrag1, 1);
-                o.regTolkOppdrag(oppdrag1, 1);
-                o.regTolkOppdrag(oppdrag1, 1);
-                o.regOppdragOverssettelse(oppdrag2, 1);
-                o.regOppdragOverssettelse(oppdrag3, 1);
-                o.regOppdragOverssettelse(oppdrag4, 2);
+                o.regTolkOppdrag(oppdrag2, 1);
+                o.regTolkOppdrag(oppdrag3, 1);
+
+                int[] tolkId = new int[2];
+                tolkId[0] = 8;
+                tolkId[1] = 9;
+                var ok = f.regEnForesporselPåEnEllerFlereTolk(tolkId, 1);
+                db.SaveChanges();
+
 
             }
             catch (Exception e)

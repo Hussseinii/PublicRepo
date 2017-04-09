@@ -165,6 +165,6 @@ C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\Sy
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Webpages.Razor.xml
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Helpers.xml
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\bin\System.Web.Mvc.xml
-C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.dll
 C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.pdb
+C:\Users\Mojola\Documents\NewPublicRepo\TolkesentralenLH\TolkesentralenLH\obj\Debug\TolkesentralenLH.csprojResolveAssemblyReference.cache

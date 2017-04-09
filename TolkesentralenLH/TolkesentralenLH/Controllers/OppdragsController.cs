@@ -14,8 +14,17 @@ namespace TolkesentralenLH.Controllers
         // GET: Oppdrags
         public ActionResult listOppdragTolk()
         {
-
+            dbOppdrag.finnOppdrag(1);
+            int[] tolkId = {8};
+            var ok = dbOppdrag.regEnForesporselPåEnEllerFlereTolk(tolkId, 1);
             List<Tolking_vm> alleTolkOppdrag = dbOppdrag.listOppdragTolk();
+            return View(alleTolkOppdrag);
+        }
+
+        public ActionResult listOppdragUbehandlet()
+        {
+          
+            List<Tolking_vm> alleTolkOppdrag = dbOppdrag.listOppdragTolkUbehandlett();
             return View(alleTolkOppdrag);
         }
 

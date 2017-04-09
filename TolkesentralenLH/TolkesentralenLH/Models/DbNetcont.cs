@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Web;
 
 namespace TolkesentralenLH.Models
 {
@@ -12,9 +8,10 @@ namespace TolkesentralenLH.Models
 
         public DbNetcont() : base("TolkesentralenDb")
         {
+            Database.SetInitializer(new DBContextInitializer());
 
            // Database.CreateIfNotExists();
-            Database.SetInitializer(new DBContextInitializer());
+           
         }
 
         // public DbSet<Oppdrag> Oppdrager { get; set; }
@@ -24,6 +21,7 @@ namespace TolkesentralenLH.Models
         public DbSet<Poststed> Poststeder { get; set; }
         public DbSet<Oppdrag> Oppdrag { get; set; }
         public DbSet<Fil> Filer { get; set; }
+        public DbSet<Foresporsler> foresporelse { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

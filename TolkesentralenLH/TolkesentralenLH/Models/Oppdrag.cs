@@ -22,6 +22,7 @@ namespace TolkesentralenLH.Models
 
         public virtual Kunde kunde { get; set; }
         public virtual Tolk Tolk { get; set; }
+        public bool sendt { get; set; }
     }
 
 
@@ -41,6 +42,30 @@ namespace TolkesentralenLH.Models
 
         public string frist { get; set; }
         public List<Fil> fil { get; set; }
+
+    }
+    //[Table("foresporelse")]
+    public class Foresporsler
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None)]
+        public int foresporselID { get; set; }
+
+        public DateTime regDato { get; set; }
+        public string spraakFra { get; set; }
+
+        public string spraakTil { get; set; }
+        public string oppdragType { get; set; }
+        public string andreOpplisning { get; set; }
+
+      
+        public string oppdragsAddres { get; set; }
+        public string oppdragsDato { get; set; }
+        public string tidFra { get; set; }
+        public string tidTil { get; set; }
+
+       // public virtual Kunde kunde { get; set; }
+        public virtual List<Tolk> Tolk { get; set; }
 
     }
 }

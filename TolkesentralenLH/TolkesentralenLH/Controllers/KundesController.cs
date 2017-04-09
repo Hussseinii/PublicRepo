@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TolkesentralenLH.Models;
+using TolkesentralenLH.Repository;
 using TolkesentralenLH.ViewModels;
 
 namespace TolkesentralenLH.Controllers
@@ -11,12 +12,15 @@ namespace TolkesentralenLH.Controllers
     public class KundesController : Controller
     {
         DbPerson db = new DbPerson();
+        DbForessporsel db1 = new DbForessporsel();
         // GET: Kundes
         public ActionResult ListeKunde()
         {
 
-            List<Kunde_VM> allekunde = db.ListeAlleKunder(0);
-            return View(allekunde);
+            // List<Kunde_VM> allekunde = db.ListeAlleKunder(0);
+            //return View(allekunde);
+            List<Tolking_vm> allfor = db1.listTolkForesporsler();
+            return View(allfor);
         }
 
         public ActionResult Registrer()
@@ -43,6 +47,7 @@ namespace TolkesentralenLH.Controllers
         /**********************************************************Tolk-start*****************************/
         public ActionResult RegTolk()
         {
+           
             return View();
         }
 

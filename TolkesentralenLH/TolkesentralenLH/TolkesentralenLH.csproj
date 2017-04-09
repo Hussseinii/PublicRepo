@@ -176,9 +176,6 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
-    <Compile Include="Fil.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,16 +186,8 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Poststed.cs" />
     <Compile Include="Models\Spraak.cs" />
-    <Compile Include="Oppdrag.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Poststed.cs">
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DbForessporsel.cs" />
     <Compile Include="Repository\DbOppdrag.cs" />
     <Compile Include="Repository\DbPerson.cs" />
     <Compile Include="Repository\DbSpraak.cs" />
@@ -218,6 +207,8 @@
     <Content Include="Views\Kundes\ListTolk.cshtml" />
     <Content Include="Views\Kundes\RegSpraakPåTolk.cshtml" />
     <Content Include="Views\Oppdrags\regOppdragOversettelse.cshtml" />
+    <Content Include="Views\Oppdrags\listOppdragTolk.cshtml" />
+    <Content Include="Views\Oppdrags\listOppdragUbehandlet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

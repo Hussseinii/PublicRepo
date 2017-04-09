@@ -36,12 +36,13 @@ namespace TolkesentralenLH.Models
         public string kontaktperson { get; set; }
         public int telefax { get; set; }
         public string fakturaAddress { get; set; }
-
+      
         public virtual List<Oppdrag> oppdrag { get; set; }
     }
 
     public class Tolk : Person
     {
+        public virtual List<Foresporsler> foresporsler { get; set; }
         public virtual List<Spraak> spraak { get; set; }
         public virtual List<Oppdrag> oppdrag { get; set; }
         

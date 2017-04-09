@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TolkesentralenLH.ViewModels.Oppdrag_VM>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>listOppdragUbehandlet</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.kundeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.oppdragID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fraspraak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tilspraak)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typetolk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.andreopplysninger)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.kundeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.oppdragID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fraspraak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tilspraak)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.typetolk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.andreopplysninger)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

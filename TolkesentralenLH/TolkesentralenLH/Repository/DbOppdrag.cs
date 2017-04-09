@@ -36,6 +36,7 @@ namespace TolkesentralenLH.Models
                     tidFra = nyOppdrag.frakl,
                     tidTil = nyOppdrag.tilkl,
                     andreOpplisning = nyOppdrag.andreopplysninger,
+                    sendt = false
 
                 };
 
@@ -75,15 +76,6 @@ namespace TolkesentralenLH.Models
                     andreOpplisning = nyOppdrag.andreopplysninger,
                     
                 };
-
-                //foreach(var f in nyOppdrag.fil)
-                //{
-                    
-
-                //    oppdragDb.fil.Add(f);
-                //}
-
-                 
 
                 if (Bestiller != null)
                 {
@@ -190,7 +182,49 @@ namespace TolkesentralenLH.Models
         }
 
 
-       // Lister Tolkinger som tilhører en kunde
+        public List<Tolking_vm> listOppdragTolkUbehandlett()
+        {
+            // return db.Oppdrag.ToList();
+            List<Tolking> alleFramaate = db.Oppdrag.OfType<Tolking>().Where(O => O.sendt == false).ToList();
+                                        
+            try
+            {
+
+                List<Tolking_vm> vm_listeframmate = new List<Tolking_vm>();
+                foreach (var rowf in alleFramaate)
+                {
+
+                    var framaater = new Tolking_vm()
+                    {
+                        kundeID = rowf.kunde.persId,
+                        oppdragID = rowf.oppdragsID,
+                        typetolk = rowf.oppdragType,
+                        fraspraak = rowf.spraakFra,
+                        tilspraak = rowf.spraakTil,
+                        sted = rowf.oppdragsAddres,
+                        oppdragsdato = rowf.oppdragsDato,
+                        frakl = rowf.tidFra,
+                        tilkl = rowf.tidTil,
+
+                        andreopplysninger = rowf.andreOpplisning,
+
+
+                    };
+                    vm_listeframmate.Add(framaater);
+                }
+
+                return vm_listeframmate;
+            }
+            catch (Exception feil)
+            {
+                Debug.WriteLine("Exception Message: " + feil.Message);
+                return null;
+            }
+
+        }
+
+
+        // Lister Tolkinger som tilhører en kunde
         public List<Tolking_vm> listTolkOppdragMedKundeId(int kundeId)
         {
           
@@ -241,7 +275,38 @@ namespace TolkesentralenLH.Models
         }
 
 
+        /*****************Registerer en foresporsel på en tolk eller flere tolk*****************/
 
+        public bool regEnForesporselPåEnEllerFlereTolk(int[] tolkId, int opprdragId)
+        {
+
+            Oppdrag oppdrag = db.Oppdrag.Find(opprdragId); 
+            if (oppdrag != null)
+            {
+               
+                foreach(int tolk_ID in tolkId)
+                {
+                    var tolk = db.Personer.OfType<Tolk>().FirstOrDefault(T => T.persId == tolk_ID);
+
+                    if (tolk != null)
+                    {
+
+                        tolk.oppdrag.Add(oppdrag);
+                        db.SaveChanges();
+
+                    }
+                    
+
+                }
+
+                return true;
+
+               
+            }
+
+
+            return false;
+        }
 
     }
 }
